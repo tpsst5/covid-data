@@ -1,7 +1,7 @@
 import boto3
 
 
-# Create table
+# Create table DynamoDB table for covid data
 def create_covid_table(dynamodb=None):
     if not dynamodb:
         dynamodb = boto3.resource('dynamodb', endpoint_url="http://localhost:8000")
@@ -25,7 +25,7 @@ def create_covid_table(dynamodb=None):
             },
             {
                 'AttributeName': 'date',
-                'AttributeType': 'S'
+                'AttributeType': 'N'
             }
 
         ],
